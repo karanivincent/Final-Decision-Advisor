@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Salaries</h2>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Employee</th>
+                    <th>Amount</th>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+            </thead>
+    {% for salary in salaries_list %}
+            <tbody>
+                <tr>
+                    <td><a href = "{% url 'management:salaries_detail' pk=salary.pk %}">{{salary.emp_no}}</a></td>
+                    <td>{{salary.amount}}</td>
+                    <td>{{salary.from_date}}</td>
+                    <td>{{salary.to_date}}</td>
+                </tr>
+                
+            </tbody>
+
+    {% endfor%}
+        </table>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3> <a href="{% url 'management:employee_detail' pk=salaries.emp_no.pk %}"> {{salaries.emp_no}}'s Salary</a> </h3>
+<p>Amount : {{salaries.amount}}</p>
+<p> Advance : {{salaries.advance}}</p>
+<p> From : {{salaries.from_date}} to: {{salaries.to_date}}
+{% if user.is_authenticated %}
+  <a class='btn btn-secondary' href="{% url 'management:salaries_update' pk=salaries.pk %}">
+    <span class='fas fa-pen'></span>
+    <span class="text-body icon-label">Edit</span>
+  </a>
+  <a class='btn btn-secondary' href="{% url 'management:salaries_delete' pk=salaries.pk %}">
+    <i class="fas fa-trash"></i>
+    <span class="text-body icon-label">Delete</span>
+
+  </a>
+{% endif %}
+
+{% endblock content %}

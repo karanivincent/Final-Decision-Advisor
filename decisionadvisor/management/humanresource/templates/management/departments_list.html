@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Departments</h2>
+    <ul class="list-group">
+    {% for department in departments_list %}
+        <li class="list-group-item"><a href = "{% url 'management:departments_detail' pk=department.pk %}">{{department.dept_name}}</a></li>
+        
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Titles</h2>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Employee</th>
+                    <th>title</th>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+            </thead>
+    {% for title in titles_list %}
+            <tbody>
+                <tr>
+                    <td><a href = "{% url 'management:titles_detail' pk=title.pk %}">{{title.emp_no}}</a></td>
+                    <td>{{title.title}}</td>
+                    <td>{{title.from_date}}</td>
+                    <td>{{title.to_date}}</td>
+                </tr>
+                
+            </tbody>
+
+    {% endfor%}
+        </table>
+</div>
+
+{% endblock content %}
