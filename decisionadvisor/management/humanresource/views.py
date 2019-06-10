@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from humanresource.models import (Departments, Employee,
+from .models import (Departments, Employee,
                                 Salaries, Titles,
                                 DeptEmployee, DeptManager)
 from django.views.generic import (CreateView, DetailView,
                                     UpdateView, DeleteView,
                                     ListView )
 from django.contrib.auth.mixins import LoginRequiredMixin
-from humanresource.forms import (DepartmentsForm, EmployeeForm,
+from .forms import (DepartmentsForm, EmployeeForm,
                                 SalariesForm, TitlesForm,
                                 DeptEmployeeForm, DeptManagerForm)
 from django.urls import reverse_lazy

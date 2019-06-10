@@ -1,0 +1,57 @@
+<nav class="navbar fixed-top navbar-expand-lg bg-light mynav" role="navigation" id="navbar">
+      <div class="container">
+        <div class="navbar-nav align-items-center">
+          <a class="navbar-brand mynav" href="#">Decision Advisor</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Products </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'products:product_new' %}">New</a>
+                <a class="dropdown-item" href="{% url 'products:product_list' %}">All</a>
+              </div>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Employees </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'management:employee_new' %}">New</a>
+                <a class="dropdown-item" href="{% url 'management:employee_list' %}">All</a>
+              </div>
+              
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Salaries </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'management:salaries_new' %}">New</a>
+                <a class="dropdown-item" href="{% url 'management:salaries_list' %}">All</a>
+              </div>
+              
+            </li>
+              <a class="nav-item nav-link" href="{% url 'management:departments_list' %}" class="btn btn-simple"> Departments </a>
+
+            <li>
+              <a class="nav-item nav-link" href="{% url 'management:titles_list' %}" class="btn btn-simple"> Titles </a>
+
+            </li>
+            <li>
+              <a class="nav-item nav-link" href="{% url 'accounts:logout' %}" class="btn btn-simple"><i class="fas fa-sign-out-alt"></i> Log out</a>
+
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+
+
+
+          {% else %}
+            <a class="nav-item nav-link" href="{% url 'accounts:login' %}?next={{request.path}}" class="btn btn-simple"><i class="fas fa-user"></i> Log in</a>
+            <a class="nav-item nav-link" href="{% url 'accounts:signup' %}?next={{request.path}}" class="btn btn-simple"><i class="fas fa-user-plus"></i> Sign up</a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+

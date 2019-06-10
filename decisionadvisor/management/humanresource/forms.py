@@ -1,5 +1,5 @@
 from django import forms
-from humanresource.models import (Titles, Departments,
+from .models import (Titles, Departments,
                              Employee, Salaries,
                              DeptEmployee, DeptManager)
 from bootstrap_datepicker_plus import DatePickerInput
