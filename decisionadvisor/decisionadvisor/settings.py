@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'bootstrap4',
     'management.humanresource',
     'accounts',
-    'management.assets_liabilities'
+    'management.assets_liabilities',
+    'supplychain.suppliers_customers',
+    'supplychain.inventory',
 ]
 
 MIDDLEWARE = [
