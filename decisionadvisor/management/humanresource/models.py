@@ -13,9 +13,9 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=14)
     last_name = models.CharField(max_length=16) 
     gender = models.CharField(max_length=1, null=True, choices=GENDER_CHOICES)
-    ID = models.PositiveIntegerField
-    phone = models.PositiveIntegerField
-    email = models.EmailField
+    ID = models.PositiveIntegerField(null=True)
+    phone = models.PositiveIntegerField(null=True)
+    email = models.EmailField(null=True)
     hire_date = models.DateField(null=True)
 
     class Meta:
