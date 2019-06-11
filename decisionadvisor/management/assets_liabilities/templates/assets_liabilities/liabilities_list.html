@@ -3,26 +3,26 @@
 
 
 <div class="container">
-    <h2>Assets</h2>
+    <h2>Liabilities</h2>
 
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
                     <th>Value</th>
-                    <th>PurchaseDate</th>
+                    <th>Due Date</th>
                     <th>Description</th>
 
                 </tr>
             </thead>
-    {% for asset in assets_list %}
+    {% for liability in liabilities_list %}
             <tbody>
                 <tr>
-                    <td><a href = "{% url 'assets:assets_detail' pk=asset.pk %}">{{asset.name}}</a></td>
-                    <td>{{asset.value}}</td>
-                    <td>{{asset.purchase_date}}</td>
-                    <td>{{asset.description}}</td>
-
+                    <td><a href = "{% url 'assets:liabilities_detail' pk=liability.pk %}">{{liability.name}}</a></td>
+                    <td>{{liability.amount}}</td> 
+                    <td>{{liability.due_date}}</td>
+                    <td>{{liability.description}}</td>
+                    <!--TODO find out how to use comma when displaying  -->  
                 </tr>
             </tbody>
 

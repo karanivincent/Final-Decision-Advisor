@@ -6,7 +6,7 @@ from django.utils.text import slugify
 
 # Create your models here.
 class Assets(models.Model):
-   
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255, unique=True)
     value = models.PositiveIntegerField()	
     purchase_date = models.DateField(null=True)
@@ -29,11 +29,10 @@ class Assets(models.Model):
     objects = models.Manager()
 
 class Liabilities(models.Model):
-
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255, unique=True)
     amount = models.PositiveIntegerField()	
-    DueDate = models.DateField(null=True)
-    StartDate = models.DateField(null=True)
+    due_date = models.DateField(null=True)
     description = models.CharField(max_length=255, null=True)
 
 
@@ -46,7 +45,7 @@ class Liabilities(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('assets_products:assets_products_detail', kwargs={'pk':self.pk})
+        return reverse('assets:assets_products_detail', kwargs={'pk':self.pk})
 
     class Meta:
         ordering = ['name']
