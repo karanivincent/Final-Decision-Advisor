@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Name {{suppliers.fullname}} </h3>
+<p> Email: {{suppliers.email}} </p>
+<p> Phone: {{suppliers.phone}} </p>
+<p> Balance: {{suppliers.balance}} </p>
+
+{% comment %} <p> Title: 
+  {% for title in supplier.title.all %}
+
+   {{title.title}},
+  
+  {% endfor %}
+</p> {% endcomment %}
+
+
+{% if user.is_authenticated %}
+  <a class='btn btn-secondary' href="{% url 'suppliers_customers:supplier_update' pk=suppliers.pk %}">
+    <span class='fas fa-pen'></span>
+    <span class="text-body icon-label">Edit</span>
+  </a>
+  <a class='btn btn-secondary' href="{% url 'suppliers_customers:supplier_delete' pk=suppliers.pk %}">
+    <i class="fas fa-trash"></i>
+    <span class="text-body icon-label">Delete</span>
+
+  </a>
+{% endif %}
+
+{% endblock content %}

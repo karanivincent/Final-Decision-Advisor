@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Customers</h2>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>ID</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+    {% for customer in customer_list %}
+            <tbody>
+                <tr>
+                    <td><a href = "{% url 'suppliers_customers:customer_detail' pk=customer.pk %}">{{customer.fullname}}</a></td>
+                    <td>{{customer.gender}}</td>
+                    <td>{{customer.ID}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.balance}}</td>
+                </tr>
+            </tbody>
+
+    {% endfor%}
+        </table>
+</div>
+
+{% endblock content %}
