@@ -9,7 +9,8 @@ class Assets(models.Model):
    
     name = models.CharField(max_length=255, unique=True)
     value = models.PositiveIntegerField()	
-    PurchaseDate = models.DateField(null=True)
+    purchase_date = models.DateField(null=True)
+    description = models.CharField(max_length=255)
     
 
     def __str__(self):
@@ -33,6 +34,8 @@ class Liabilities(models.Model):
     amount = models.PositiveIntegerField()	
     DueDate = models.DateField(null=True)
     StartDate = models.DateField(null=True)
+    description = models.CharField(max_length=255, null=True)
+
 
     
 

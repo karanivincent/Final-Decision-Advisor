@@ -3,7 +3,8 @@
 
 <h3> {{assets.name}} </h3>
 <p> Value: {{assets.value}}</p>
-<p> PurchaseDate: {{assets.PurchaseDate}}
+<p> PurchaseDate: {{assets.purchase_date}} </p>
+<p> Description: {{assets.description}}
 
 {% if user.is_authenticated %}
   <a class='btn btn-secondary' href="{% url 'assets:assets_update' pk=assets.pk %}">

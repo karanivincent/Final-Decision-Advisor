@@ -5,11 +5,11 @@ class AssetsForm(forms.ModelForm):
 
     class Meta():
         model = Assets
-        fields = ('name', 'value', 'PurchaseDate')
+        fields = '__all__'
 
 class LiabilitiesForm(forms.ModelForm):
 
     class Meta():
         model = Liabilities
-        fields = ('name', 'amount', 'DueDate', 'StartDate')
+        fields = '__all__'
         
