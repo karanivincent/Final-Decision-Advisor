@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'management.humanresource',
-    'accounts'
+    'accounts',
+    'management.assets_liabilities'
 ]
 
 MIDDLEWARE = [

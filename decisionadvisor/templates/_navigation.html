@@ -6,33 +6,33 @@
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
           
-            <li class="nav-item dropdown">
+            {% comment %} <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Products </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'products:product_new' %}">New</a>
+                <a class="dropdown-item" href="{% url 'assets:product_new' %}">New</a>
                 <a class="dropdown-item" href="{% url 'products:product_list' %}">All</a>
-              </div>
+              </div> {% endcomment %}
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Employees </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'management:employee_new' %}">New</a>
-                <a class="dropdown-item" href="{% url 'management:employee_list' %}">All</a>
+                <a class="dropdown-item" href="{% url 'HR:employee_new' %}">New</a>
+                <a class="dropdown-item" href="{% url 'HR:employee_list' %}">All</a>
               </div>
               
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Salaries </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'management:salaries_new' %}">New</a>
-                <a class="dropdown-item" href="{% url 'management:salaries_list' %}">All</a>
+                <a class="dropdown-item" href="{% url 'HR:salaries_new' %}">New</a>
+                <a class="dropdown-item" href="{% url 'HR:salaries_list' %}">All</a>
               </div>
               
             </li>
-              <a class="nav-item nav-link" href="{% url 'management:departments_list' %}" class="btn btn-simple"> Departments </a>
+              <a class="nav-item nav-link" href="{% url 'HR:departments_list' %}" class="btn btn-simple"> Departments </a>
 
             <li>
-              <a class="nav-item nav-link" href="{% url 'management:titles_list' %}" class="btn btn-simple"> Titles </a>
+              <a class="nav-item nav-link" href="{% url 'HR:titles_list' %}" class="btn btn-simple"> Titles </a>
 
             </li>
             <li>

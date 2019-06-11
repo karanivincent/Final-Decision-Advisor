@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Assets</h2>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>PurchaseDate</th>
+                    <th>Description</th>
+
+                </tr>
+            </thead>
+    {% for asset in assets_list %}
+            <tbody>
+                <tr>
+                    <td><a href = "{% url 'assets:assets_detail' pk=asset.pk %}">{{asset.name}}</a></td>
+                    <td>{{asset.value}}</td>
+                    <td>{{asset.purchase_date}}</td>
+                    <td>{{asset.description}}</td>
+
+                </tr>
+            </tbody>
+
+    {% endfor%}
+        </table>
+</div>
+
+{% endblock content %}

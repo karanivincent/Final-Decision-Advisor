@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Liabilities</h2>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Due Date</th>
+                    <th>Description</th>
+
+                </tr>
+            </thead>
+    {% for liability in liabilities_list %}
+            <tbody>
+                <tr>
+                    <td><a href = "{% url 'assets:liabilities_detail' pk=liability.pk %}">{{liability.name}}</a></td>
+                    <td>{{liability.amount}}</td> 
+                    <td>{{liability.due_date}}</td>
+                    <td>{{liability.description}}</td>
+                    <!--TODO find out how to use comma when displaying  -->  
+                </tr>
+            </tbody>
+
+    {% endfor%}
+        </table>
+</div>
+
+{% endblock content %}
