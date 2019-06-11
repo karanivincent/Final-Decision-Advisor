@@ -26,7 +26,7 @@ class SupplierUpdateView(LoginRequiredMixin, UpdateView):
 
 class SupplierDeleteView(LoginRequiredMixin, DeleteView):
     model = Suppliers
-    success_url = reverse_lazy('suppliers_customers:employee_list')
+    success_url = reverse_lazy('suppliers_customers:supplier_list')
 
 class SupplierListView(LoginRequiredMixin, ListView):
     model = Suppliers
@@ -47,7 +47,7 @@ class CustomerUpdateView(LoginRequiredMixin, UpdateView):
 
 class CustomerDeleteView(LoginRequiredMixin, DeleteView):
     model = Customers
-    success_url = reverse_lazy('suppliers_customers:employee_list')
+    success_url = reverse_lazy('suppliers_customers:customer_list')
 
 class CustomerListView(LoginRequiredMixin, ListView):
     model = Customers

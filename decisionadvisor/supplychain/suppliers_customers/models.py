@@ -50,7 +50,7 @@ class Customers(models.Model):
 
     class Meta:
         db_table = 'customers'
-        ordering = ['hire_date']
+        ordering = ['first_name']
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
@@ -59,7 +59,7 @@ class Customers(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("suppliers_customers:customers_detail", kwargs={"pk": self.pk})
+        return reverse("suppliers_customers:customer_detail", kwargs={"pk": self.pk})
 
     def fullname(self):
         return self.first_name + ' ' + self.last_name

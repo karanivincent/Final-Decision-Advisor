@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = 'supplier_customers'
+app_name = 'suppliers_customers'
 
 urlpatterns = [
     ##############################################################################################################3

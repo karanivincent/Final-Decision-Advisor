@@ -22,4 +22,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('management/', include('management.humanresource.urls')),
+    path('agent/', include('supplychain.suppliers_customers.urls')),
+
 ]
