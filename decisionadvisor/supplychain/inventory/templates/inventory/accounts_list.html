@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h2>Accounts</h2>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+    {% for account in accounts_list %}
+            <tbody>
+                <tr>
+                    <td><a href = "{% url 'products:account_detail' pk=account.pk %}">{{account.name}}</a></td>
+                    <td>{{account.amount}}</td>
+                    {% if account.account_type == 'AS'%}
+                    <td>Asset</td>
+
+                    {%elif account.account_type == 'LI' %}
+                    <td>Liability</td>
+
+                    {%elif account.account_type == 'CA' %}
+                    <td>Capital</td>
+
+                    {%elif account.account_type == 'EX' %}
+                    <td>Expense</td>
+
+                    {% endif %}
+
+
+                    
+                </tr>
+            </tbody>
+
+    {% endfor%}
+        </table>
+</div>
+
+{% endblock content %}
